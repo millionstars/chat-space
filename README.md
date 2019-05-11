@@ -18,7 +18,7 @@
 |group_id|references|null: false, foreign_key: true|
 |content|string|
 |image|string|
-|user|reference|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 
 
 ### Association
