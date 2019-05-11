@@ -23,6 +23,15 @@ Things you may want to cover:
 
 * ...
 
+## user テーブル
+
+
+
+## message テーブル
+
+
+## group テーブル
+
 ## member テーブル
 |Column|Type|Options|
 |------|----|-------|
