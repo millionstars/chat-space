@@ -15,8 +15,6 @@
 ## messages テーブル
 |Column|Type|
 |------|----|
-|user_id|integer|
-|content_id|integer|
 |group_id|integer|
 |content|string|
 |image|string|
