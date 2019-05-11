@@ -15,7 +15,7 @@
 ## messages テーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 |content|string|null: false|
 |image|string|
 |user|reference|null: false, foreign_key: true|
