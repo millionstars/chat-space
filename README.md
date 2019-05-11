@@ -8,6 +8,7 @@
 
 ### Association
 - has_many :groups through: :member
+- has_many :members
 - has_many :messages
 
 
