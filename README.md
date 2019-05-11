@@ -12,7 +12,7 @@
 - has_many :messages
 
 
-## contents テーブル
+## messages テーブル
 |Column|Type|
 |------|----|
 |user_id|integer|
