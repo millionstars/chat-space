@@ -32,7 +32,7 @@
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |member_id|integer|null: false, foreign_key: true|
-|user|references|foreign_key: true|
+
 
 ### Association
 - has_many :users through: :member
