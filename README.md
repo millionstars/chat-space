@@ -15,9 +15,9 @@
 |Column|Type|
 |------|----|
 |user_id|integer|
-|content_id|string|
+|content_id|integer|
 |group_id|integer|
-|content|integer|
+|content|string|
 |image|string|
 |user|reference|
 
