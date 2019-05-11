@@ -18,6 +18,7 @@
 |content_id|string|
 |group_id|integer|
 |content|integer|
+|image|string|
 |user|reference|
 
 
