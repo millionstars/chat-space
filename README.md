@@ -11,13 +11,13 @@
 - has_many :messages
 
 
-## messages テーブル
+## contents テーブル
 |Column|Type|
 |------|----|
 |user_id|integer|
-|message_id|string|
+|content_id|string|
 |group_id|integer|
-|message|integer|
+|content|integer|
 |user|reference|
 
 
