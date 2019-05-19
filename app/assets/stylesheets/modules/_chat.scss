@@ -11,7 +11,24 @@
         font-size: 20px;
         margin-top: 35px;
       }
-      
+      &__members{
+        color: #999;
+        display: flex;
+        font-size: 12px;
+        margin-top: 15px;
+        .member{
+          display: inline-block;
+          padding-right: 5px;
+        }
+      }
+    }
+    .right-header{
+      border: 1px solid $light_blue;
+      color: $light_blue;
+      float: right;
+      height: 40px;
+      margin-top: 20px;
+      padding: 0 20px;
     }
   }
 }
