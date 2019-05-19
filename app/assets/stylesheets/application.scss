@@ -1,6 +1,6 @@
-@import "colors";
-@import "font-size";
-@import "reset";
+@import "config/colors";
+@import "config/font-size";
+@import "config/reset";
 @import "mixins/mixin";
 @import "mixins/vendor_prefix";
 @import "modules/side_bar";
