@@ -48,10 +48,10 @@
             メッセージ
     .form
       %form
-        %input.form__message
+        %input.form__message{placeholder: 'text'}
         .form__mask
           %label.form__mask__image
-            %i.far.fa-image.icon 
+            = fa_icon 'image', class: 'icon'
           %input.hidden{type: 'file'}
         %input.form__submit{type: 'submit', value: 'Send'}
 
