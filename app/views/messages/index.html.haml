@@ -32,7 +32,7 @@
         .upper-message
           .upper-message__user-name
             メンバー
-          .upper-message_date
+          .upper-message__date
             2019/5/11
         .lower-message
           .lower-message__content
@@ -51,7 +51,8 @@
         %input.form__message
         .form__mask
           %label.form__mask__image
-            = fa_icon 'picture-o', class: 'icon'
+            %i.far.fa-image.icon 
+            -# = fa_icon 'image', class: 'icon'
           %input.hidden{type: 'file'}
         %input.form__submit{type: 'submit', value: 'Send'}
 
