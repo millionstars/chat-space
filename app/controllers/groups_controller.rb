@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   def new
     @group = Group.new
-    @group.user << current_user
+    @group.users << current_user
   end
   def create
     @group = Group.new(group_params)
@@ -9,6 +9,7 @@ class GroupsController < ApplicationController
     redirect_to root_path, notice: 'グループを作成しました'
     else
       render :new
+    end
   end
   private
   def group_params
