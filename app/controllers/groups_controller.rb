@@ -19,7 +19,7 @@ class GroupsController < ApplicationController
 
   def update
     if @Gruop.update(group_params)
-      redirect_to edit_messages_path(@group), notice 'グループを編集しました'
+      redirect_to group_messages_path(@group), notice 'グループを編集しました'
     end
   end
   
