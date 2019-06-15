@@ -2,7 +2,7 @@ $(function() {
   function buildHTML(message){
     var img = message.image? `<img src=${message.image}>` : "";
 
-    var html = `<div class="message" >
+    var html = `<div class="message" data-id="${message.id}">
                   <div class="upper-message">
                     <p class="upper-message__user-name">
                     ${message.user_name}
@@ -18,7 +18,7 @@ $(function() {
                   <div class="lower-message__content">
                     ${img}
                   </div>
-                </div>`
+                </div>` 
     return html;
   }
   $('#new_message').on('submit', function(e){
@@ -44,4 +44,28 @@ $(function() {
     })
     return false;
   })
+
+  var reloadMessages = function(){
+    var last_message_id = $('.message').last().data('id');
+    var urlPathSplit = location.pathname.split('/');
+    var reload =('/'+urlPathSplit[1]+'/'+urlPathSplit[2]+'/'+'api/messages');
+    $.ajax({
+      url: reload,
+      type: 'GET',
+      data: {id: last_message_id},
+      dataType: 'json'
+    })
+    .done(function(messages) {
+      var insertHTML = '';
+        messages.forEach(function(message){
+          insertHTML = buildHTML(message);
+      })
+      $('.messages').append(insertHTML);
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+    })
+    .fail(function(){
+      alert('error');
+    })
+  };
+  setInterval(reloadMessages, 5000);
 });
