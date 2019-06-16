@@ -45,10 +45,11 @@ $(function() {
     return false;
   })
 
+  $(function() {
   var reloadMessages = function(){
     var last_message_id = $('.message').last().data('id');
     var urlPathSplit = location.pathname.split('/');
-    var reload =('/'+urlPathSplit[1]+'/'+urlPathSplit[2]+'/'+'api/messages');
+    var reload =('/'+'groups'+'/'+urlPathSplit[2]+'/'+'api/messages');
     $.ajax({
       url: reload,
       type: 'GET',
@@ -61,11 +62,20 @@ $(function() {
           insertHTML = buildHTML(message);
       })
       $('.messages').append(insertHTML);
+
+      if (location.pathname.match(/\/groups\/\d+\/messages/)) {
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
-    })
+    }})
+
     .fail(function(){
       alert('error');
     })
   };
-  setInterval(reloadMessages, 5000);
+  // setInterval(reloadMessages, 1000);
+
+    // if (location.pathname.match(/\/groups\/\d+\/messages/)) {
+      setInterval(reloadMessages, 5000);
+    // }
+    console.log(location.pathname);
+  });
 });
