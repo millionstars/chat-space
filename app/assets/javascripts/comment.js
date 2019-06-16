@@ -60,22 +60,17 @@ $(function() {
       var insertHTML = '';
         messages.forEach(function(message){
           insertHTML = buildHTML(message);
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
       })
       $('.messages').append(insertHTML);
 
-      if (location.pathname.match(/\/groups\/\d+\/messages/)) {
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
-    }})
+      
+    })
 
     .fail(function(){
       alert('error');
     })
   };
-  // setInterval(reloadMessages, 1000);
-
-    // if (location.pathname.match(/\/groups\/\d+\/messages/)) {
       setInterval(reloadMessages, 5000);
-    // }
-    console.log(location.pathname);
   });
 });
