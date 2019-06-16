@@ -46,7 +46,9 @@ $(function() {
   })
 
   $(function() {
-  var reloadMessages = function(){
+    if (location.pathname.match(/\/groups\/\d+\/messages/)) {
+
+    var reloadMessages = function(){
     
     var last_message_id = $('.message').last().data('id');
     var urlPathSplit = location.pathname.split('/');
@@ -74,5 +76,6 @@ $(function() {
     })
   };
       setInterval(reloadMessages, 5000);
+}
   });
 });
