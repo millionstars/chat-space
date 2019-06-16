@@ -47,8 +47,6 @@ $(function() {
 
   $(function() {
   var reloadMessages = function(){
-    if (location.pathname.match(/\/groups\/\d+\/messages/)) {
-      
     
     var last_message_id = $('.message').last().data('id');
     var urlPathSplit = location.pathname.split('/');
@@ -63,9 +61,10 @@ $(function() {
       var insertHTML = '';
         messages.forEach(function(message){
           insertHTML = buildHTML(message);
+          $('.messages').append(insertHTML);
           $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
       })
-      $('.messages').append(insertHTML);
+      // $('.messages').append(insertHTML);
 
       
     })
@@ -73,7 +72,6 @@ $(function() {
     .fail(function(){
       alert('error');
     })
-  }
   };
       setInterval(reloadMessages, 5000);
   });
