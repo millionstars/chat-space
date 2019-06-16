@@ -48,7 +48,7 @@ $(function() {
   var reloadMessages = function(){
     var last_message_id = $('.message').last().data('id');
     var urlPathSplit = location.pathname.split('/');
-    var reload =('/'+urlPathSplit[1]+'/'+urlPathSplit[2]+'/'+'api/messages');
+    var reload =('/'+'groups'+'/'+urlPathSplit[2]+'/'+'api/messages');
     $.ajax({
       url: reload,
       type: 'GET',
