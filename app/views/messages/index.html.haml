@@ -9,9 +9,11 @@
           = @group.name
         %ul.left-header__members
           Member:
-          - @user.each do |user|
-            %li.member
-            = user.name
+          = @user.pluck(:name).join(",") if @user.present?
+          -# =@user.pluck(:name)
+          -# - @user.each do |user|
+          -#   %li.member
+          -#   = user.name
       .right-header
         .right-header__button
           = link_to "EDIT", edit_group_path(@group.id), method: :get
