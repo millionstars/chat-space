@@ -40,7 +40,8 @@ $(function() {
       $('#new_message')[0].reset();
      })
     .fail(function(data){
-      alert('error');
+      window.location.replace(location.href);
+      // alert('エラーaaa');
     })
     return false;
   })
